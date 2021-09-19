@@ -1,0 +1,114 @@
+<!doctype html>
+
+<head>
+  <title>Chemistry Building Virtual Tour</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+</head>
+
+<body>
+  <video id="myVideo" src="video/main.mp4" autoplay playsinline muted></video>
+
+  <main id="main">
+    <div id="intro">
+      <h3>Building chemistry in a new Chemistry Building</h3>
+      <p style="margin-bottom:10px;">The study of chemistry is a distinct part of Ohio University’s history. OHIO’s
+        first chemistry course was
+        authorized nearly 200 years ago in 1822. And in 1955, OHIO’s Board of Trustees approved the creation of the
+        University’s first doctoral program—in chemistry.</p>
+
+
+      <p style="margin-bottom:10px;">This year marks another milestone in that history as OHIO unveiled a new home for
+        its growing Department of
+        Chemistry and Biochemistry. Step inside the new Chemistry Building’s state-of-the-art labs, where undergraduate
+        and graduate students are putting the lessons learned in the classroom to practice through experimentation and
+        cutting-edge research. And see the world-class instrumentation contributing to scientific breakthroughs in
+        fields
+        ranging from health care to technology.</p>
+
+      <div id="start">
+        <h4 onclick="on()">EXPLORE</h4>
+      </div>
+
+    </div>
+
+
+  </main>
+
+
+
+  <div id="overlay">
+    <div id="close" onclick="off()"></div>
+    <div id="hidden"></div>
+    <div class="container">
+      <div class="polaroid">
+        <img class="photo" id="room1" src="img/small/1.jpg">
+        <div class="capition">
+          <div class="title">NMR and Mass Spectroscopy Lab</div>
+        </div>
+      </div>
+      <div class="polaroid">
+        <img class="photo" id="room2" src="img/small/2.jpg" alt="">
+        <div class="capition">
+          <div class="title">Student study and collaboration space</div>
+        </div>
+      </div>
+      <div class="polaroid">
+        <img class="photo" id="room3" src="img/small/3.jpg" alt="">
+        <div class="caption">
+          <div class="title">Organic Chemistry Teaching Lab</div>
+        </div>
+      </div>
+      <div class="polaroid">
+        <img class="photo" src="img/small/4.jpg" id="room4" alt="">
+        <div class="caption">
+          <div class="title">Synthetic Research Lab</div>
+        </div>
+      </div>
+      <div class="polaroid">
+        <img class="photo" id="room5" src="img/small/5.jpg" alt="">
+        <div class="capition">
+          <div class="title">Laser Lab </div>
+        </div>
+      </div>
+      <div class="polaroid">
+        <img class="photo" id="room6" src="img/small/6.jpg" alt="">
+        <div class="capition">
+          <div class="title">Atomic Force Microscope </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="informationOverlay" onclick="informationOpen()">
+    <img src="img/information.png" width="40">
+  </div>
+
+  <div id="textOverlay">
+    <div id="textInner"></div>
+    <div id="closeText" onclick="closeText()"></div>
+  </div>
+
+  <div id="closeInner" onclick="closeInner()"></div>
+
+  <!--Using embedded to prevent html class taking over-->
+  <a-scene embedded id="mainScene" cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
+    <a-assets>
+      <video id="videoBackground" autoplay muted loop src="video/4.mp4"> </video>
+    </a-assets>
+
+    <a-entity camera look-controls position="0 1.6 0" id="cameraZoom"></a-entity>
+    <a-videosphere id="videoSphere" src="#videoBackground"></a-videosphere>
+    <a-sky id="photoBackground" src="img/1.jpg" rotation="-3 90 0"></a-sky>
+
+  </a-scene>
+</body>
+
+<script src="js/code.js"></script>
+
+</html>
